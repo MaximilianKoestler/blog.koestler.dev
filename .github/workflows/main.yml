@@ -1,0 +1,26 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: "**"
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./blog
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update themes
+        run: git submodule update --init --recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+
+      - name: Build
+        run: hugo --minify
