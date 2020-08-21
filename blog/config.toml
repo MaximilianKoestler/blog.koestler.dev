@@ -1,3 +1,15 @@
 baseURL = "https://blog.koestler.dev/"
 languageCode = "en-us"
 title = "My Blog"
+theme = "aether"
+
+[params]
+	brand = "The name that is displayed in the top left of the website, consider it the website name"
+	description = "The website's description"
+#	homeimg = "Path, within the 'assets' folder, of the image used for the home button at the bottom of each post - optional"
+#	bgimg = "Path, within the 'assets' folder, of the image used for the page background - optional"
+ 	rssinmenu = true
+
+[markup]
+  [markup.highlight]
+    style = "igor"

@@ -1,0 +1,3 @@
+[submodule "blog/themes/aether"]
+	path = blog/themes/aether
+	url = https://github.com/josephhutch/aether.git
