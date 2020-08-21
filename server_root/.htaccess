@@ -1,0 +1,13 @@
+RewriteEngine On
+
+order deny,allow
+<FilesMatch "\.(php)$">
+    deny from all
+</FilesMatch>
+
+DirectoryIndex index.html
+
+RewriteCond %{REQUEST_URI} !^/branches/.*
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ branches/master/$1 [L]
